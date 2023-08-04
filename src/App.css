@@ -1,38 +1,107 @@
-.App {
+.app {
   text-align: center;
+  margin: 50px;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tabs {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; 
+  margin-bottom: 30px; 
+  border-bottom: 1px solid gray; 
+  padding: 0 20px; 
+}
+
+.tabs button {
+  margin-right: 10px;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative; 
+}
+
+.tabs button::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 100px; 
+  height: 3px;
+  background-color: blue;
+  display: none; 
+}
+
+.tabs button.active::after, .tabs button:hover::after {
+  display: block;
+}
+
+.add-todo {
+  margin: 20px 0;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.add-todo input {
+  flex: 1; /* Spread the text box to full width */
+  padding: 15px;
+  margin-right: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.5); 
+  border-radius: 7px;
+}
+
+.add-todo button {
+  padding: 15px 20px;
+  cursor: pointer;
+  background-color: blue;
+  color: white; /* Set the text color to white */
+  border: none;
+  border-radius: 10px;
+}
+
+.delete-all-btn {
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: red;
   color: white;
+  border: none;
+  border-radius: 5px;
+  float: right;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li {
+  display: flex;
+  justify-content:baseline;
+  align-items: center;
+  margin: 15px;
+  gap:5px;
 }
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: gray;
+  margin-left: auto; 
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
